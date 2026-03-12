@@ -54,6 +54,53 @@
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+
+<tr onmouseout="zipmap_stop()" onmouseover="zipmap_start()">
+  <td style="padding:16px;width:20%;vertical-align:middle">
+    <div class="one">
+      <div class="two" id='zipmap_image'><video  width=100% height=100% muted autoplay loop>
+      <source src="images/zipmap.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+      </video></div>
+      <img src='images/zipmap.jpg' width="160">
+    </div>
+    <script type="text/javascript">
+      function zipmap_start() {
+        document.getElementById('zipmap_image').style.opacity = "1";
+      }
+
+      function zipmap_stop() {
+        document.getElementById('zipmap_image').style.opacity = "0";
+      }
+      zipmap_stop()
+    </script>
+  </td>
+  <td style="padding:20px;width:75%;vertical-align:middle">
+    <a href="https://haian-jin.github.io/ZipMap/">
+      <span class="papertitle">ZipMap: Linear-Time Stateful 3D Reconstruction via Test-Time Training</span>
+    </a>
+    <br>
+    <a href="https://haian-jin.github.io/">Haian Jin</a>,
+    <a href="https://rundiwu.github.io/">Rundi Wu</a>,
+    <a href="https://tianyuanzhang.com/">Tianyuan Zhang</a>,
+    <a href="https://ruiqigao.github.io/">Ruiqi Gao</a>, <br>
+    <strong>Jonathan T. Barron</strong>,
+    <a href="https://www.cs.cornell.edu/~snavely/">Noah Snavely</a>,
+    <a href="https://holynski.org/">Aleksander Hołyński</a>
+    <br>
+    <em>CVPR</em>, 2026
+    <br>
+    <a href="https://haian-jin.github.io/ZipMap/">project page</a> /
+    <a href="https://arxiv.org/abs/2603.04385">arXiv</a> /
+    <a href="https://github.com/Haian-Jin/ZipMap">code</a>
+    <p></p>
+    <p>
+		Test-time training lets you quickly compress an entire image collection into a compact model and thereby achieve linear-time 3D reconstruction.
+    </p>
+  </td>
+</tr>
+
+
 <tr onmouseout="radmesh_stop()" onmouseover="radmesh_start()" bgcolor="#ffffd0">
   <td style="padding:16px;width:20%;vertical-align:middle">
     <div class="one">
@@ -85,7 +132,7 @@
     <a href="https://jacobsschool.ucsd.edu/faculty/profile?id=253">Falko Kuester</a>,
     <strong>Jonathan T. Barron</strong>
     <br>
-    <em>arXiv</em>, 2025
+    <em>CVPR</em>, 2026
     <br>
     <a href="https://half-potato.gitlab.io/rm/">project page</a>
     /
