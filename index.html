@@ -55,6 +55,51 @@
           <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
 
+<tr onmouseout="gr3en_stop()" onmouseover="gr3en_start()">
+  <td style="padding:16px;width:20%;vertical-align:middle">
+    <div class="one">
+      <div class="two" id='gr3en_image'><video  width=100% height=100% muted autoplay loop>
+      <source src="images/gr3en.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+      </video></div>
+      <img src='images/gr3en.jpg' width="160">
+    </div>
+    <script type="text/javascript">
+      function gr3en_start() {
+        document.getElementById('gr3en_image').style.opacity = "1";
+      }
+
+      function gr3en_stop() {
+        document.getElementById('gr3en_image').style.opacity = "0";
+      }
+      gr3en_stop()
+    </script>
+  </td>
+  <td style="padding:20px;width:75%;vertical-align:middle">
+    <a href="https://gr3en-relight.github.io/">
+      <span class="papertitle">GR3EN: Generative Relighting for 3D Environments</span>
+    </a>
+    <br>
+    <a href="https://xyxingx.github.io/">Xiaoyan Xing</a>,
+    <a href="https://henzler.github.io/">Philipp Henzler</a>,
+    <a href="https://hurjunhwa.github.io/">Junhwa Hur</a>,
+    <a href="https://bragilee.github.io/">Runze Li</a>, <br>
+    <strong>Jonathan T. Barron</strong>,
+    <a href="https://pratulsrinivasan.github.io/">Pratul P. Srinivasan</a>,
+    <a href="https://dorverbin.github.io/">Dor Verbin</a>
+    <br>
+    <em>SIGGRAPH</em>, 2026
+    <br>
+    <a href="https://gr3en-relight.github.io/">project page</a> /
+    <a href="https://arxiv.org/abs/2601.16272">arXiv</a>
+    <p></p>
+    <p>
+		Distilling the outputs of a video-to-video relighting diffusion model into a 3D reconstruction enables controllable 3D relighting of room-scale scenes.
+    </p>
+  </td>
+</tr>
+
+
 <tr onmouseout="zipmap_stop()" onmouseover="zipmap_start()">
   <td style="padding:16px;width:20%;vertical-align:middle">
     <div class="one">
