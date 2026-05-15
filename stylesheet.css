@@ -104,7 +104,7 @@ h2 {
 
 .name {
   padding-top: 20px;
-  margin: 0;
+  margin: 0 0 14px 0;
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 32px;
 }
@@ -150,6 +150,11 @@ span.highlight {
   margin-bottom: 0;
 }
 
+.hero-bio {
+  /* Ensure consistent spacing after the name; table/margin-collapse can otherwise collapse margins. */
+  margin-top: 14px;
+}
+
 /* Mobile: photo on the left, text on the right */
 @media (max-width: 768px) {
   .hero-header .hero-main-row {
@@ -180,6 +185,7 @@ span.highlight {
   .hero-header .name {
     text-align: left !important;
     padding-top: 0;
+    margin-bottom: 14px;
   }
 
   .hero-header .hero-links {
