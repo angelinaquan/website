@@ -160,6 +160,11 @@ span.highlight {
   margin-bottom: 0;
 }
 
+/* Extra desktop spacing between name and bio */
+.hero-bio {
+  margin-top: 8px;
+}
+
 /* Mobile: photo on the left, text on the right */
 @media (max-width: 768px) {
   .hero-header .hero-main-row {
