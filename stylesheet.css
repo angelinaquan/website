@@ -141,15 +141,6 @@ span.highlight {
     border-radius: 10px;
 }
 
-/* Hero headshot sizing */
-.hero-header .hero-photo-cell img {
-  max-width: 220px;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
 /* Mobile: photo on the left, text on the right */
 @media (max-width: 768px) {
   .hero-header .hero-main-row {
