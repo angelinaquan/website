@@ -142,17 +142,18 @@ span.highlight {
 }
 
 .hero {
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: flex-start;
-  gap: 16px;
+  display: grid;
   padding: 16px;
+  gap: 16px;
   width: 100%;
   box-sizing: border-box;
+  grid-template-columns: 1fr 220px;
+  grid-template-areas: "content photo";
+  align-items: start;
 }
 
 .hero-text {
-  flex: 1;
+  grid-area: content;
   min-width: 0;
 }
 
@@ -162,13 +163,14 @@ span.highlight {
 }
 
 .hero-photo {
-  flex: 0 0 37%;
-  max-width: 37%;
+  grid-area: photo;
+  width: 220px;
+  max-width: 100%;
 }
 
 .hero-photo img {
   width: 100%;
-  max-width: 100%;
+  aspect-ratio: 1;
   object-fit: cover;
   border-radius: 50%;
   display: block;
@@ -184,9 +186,11 @@ span.highlight {
 
 @media (max-width: 768px) {
   .hero {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
+    grid-template-columns: 80px 1fr;
+    grid-template-areas:
+      "photo name"
+      "bio bio"
+      "links links";
   }
 
   .hero-text {
@@ -194,22 +198,17 @@ span.highlight {
   }
 
   .hero-photo {
-    order: -1;
-    flex: 0 0 28%;
-    max-width: 28%;
+    width: 80px;
   }
 
   .hero .name {
-    order: 0;
-    flex: 1 1 auto;
+    grid-area: name;
     text-align: left;
     padding-top: 0;
   }
 
   .hero-bio {
-    order: 1;
-    flex: 1 1 100%;
-    width: 100%;
+    grid-area: bio;
   }
 
   .hero-bio p:last-child {
@@ -217,9 +216,7 @@ span.highlight {
   }
 
   .hero-links {
-    order: 2;
-    flex: 1 1 100%;
-    width: 100%;
+    grid-area: links;
     text-align: left;
   }
 }
