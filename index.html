@@ -64,19 +64,15 @@
 
 <tr>
   <td style="padding:16px;width:20%;vertical-align:middle">
-    <img src="images/gr3en.jpg" width="160" alt="Replace with your project image">
+    <img src="images/gr3en.jpg" width="160" alt="Project thumbnail">
   </td>
   <td style="padding:8px;width:80%;vertical-align:middle">
     <a href="#"><span class="papertitle">Dataset Distillation via Drifting</span></a>
     <br>
-    George Cazenavette,
-    <strong>Angelina Quan</strong>,
-    Giannis Daras,
-    Antonio Torralba,
-    Vincent Sitzmann
+    George Cazenavette, <strong>Angelina Quan</strong>, Giannis Daras, Antonio Torralba, Vincent Sitzmann
     <p></p>
     <p>
-      Dataset distillation builds a tiny set of synthetic images so training matches a large real dataset; most prior work assumes a randomly initialized network, while practice now relies on big pretrained vision backbones. This work distills data for training <em>linear probes</em> on frozen features via <em>Linear Gradient Matching</em>—synthetic images are optimized so their induced gradients in the linear classifier match those from real data. The resulting images beat real-data baselines, transfer across pretrained architectures (e.g., distilling with a DINO backbone still yields a strong CLIP linear probe), and help fine-grained classification, interpretability, and analyses of embedding similarity and spurious-correlation sensitivity.
+      Dataset distillation learns a tiny synthetic coreset, but many methods overfit a single task (e.g., classification) instead of matching the real data distribution. We drift synthetic points in a feature extractor's latent space—toward real data and away from each other—so the set better covers the distribution while still training strong classifiers; we also use it for visualization and beyond images.
     </p>
   </td>
 </tr>
@@ -84,7 +80,7 @@
 
 <tr>
   <td style="padding:16px;width:20%;vertical-align:middle">
-    <img src="images/zipmap.jpg" width="160" alt="Replace with your project image">
+    <img src="images/zipmap.jpg" width="160" alt="Project thumbnail">
   </td>
   <td style="padding:8px;width:80%;vertical-align:middle">
     <a href="#"><span class="papertitle">Edamame</span></a>
@@ -97,7 +93,7 @@
     <a href="https://devpost.com/software/m-4f2iwy">project page</a>
     <p></p>
     <p>
-      Edamame tackles lost institutional knowledge: when people leave, context disappears; when they join, tribal knowledge is buried across Slack, Drive, email, and more. The system builds a cited, continually updated <em>digital twin</em> per employee by ingesting Slack, Google Drive, Gmail, GitHub, Notion, and Jira via real OAuth—so you can ask a clone (text or voice) and get answers grounded in sources, not guesses. Ship highlights include clone chat with personality and live memory extraction, a management view that polls every clone for strategic questions with confidence and themes, auto-generated onboarding briefs, and offboarding handoff packs; built at TreeHacks 2026 (Next.js, React, Supabase/pgvector, GPT-5.3, Whisper/TTS), Greylock award for best multi-turn agent.
+      Edamame gives each employee in a company an <em>AI clone</em> for organizational memory: we integrate Slack, Google Drive, Gmail, GitHub, Notion, and Jira with real OAuth and keep vectors in step as new messages, threads, and files show up. You query a clone in text or voice and get cited answers tied back to the underlying sources. Greylock award for best multi-turn agent.
     </p>
   </td>
 </tr>
