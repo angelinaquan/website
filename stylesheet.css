@@ -104,7 +104,8 @@ h2 {
 
 .name {
   padding-top: 20px;
-  margin: 0 0 14px 0;
+  /* Single source of spacing: bottom margin here, paragraphs use default margin */
+  margin: 0 0 18px 0;
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 32px;
 }
@@ -143,16 +144,11 @@ span.highlight {
 
 .hero-bio p {
   margin-top: 0;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .hero-bio p:last-child {
   margin-bottom: 0;
-}
-
-.hero-bio {
-  /* Ensure consistent spacing after the name; table/margin-collapse can otherwise collapse margins. */
-  margin-top: 14px;
 }
 
 /* Mobile: photo on the left, text on the right */
@@ -185,7 +181,7 @@ span.highlight {
   .hero-header .name {
     text-align: left !important;
     padding-top: 0;
-    margin-bottom: 14px;
+    margin-bottom: 18px;
   }
 
   .hero-header .hero-links {
