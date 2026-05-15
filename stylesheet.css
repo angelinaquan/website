@@ -104,8 +104,7 @@ h2 {
 
 .name {
   padding-top: 20px;
-  /* Single source of spacing: bottom margin here, paragraphs use default margin */
-  margin: 0 0 18px 0;
+  margin: 0;
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 32px;
 }
@@ -151,20 +150,6 @@ span.highlight {
   margin: 0 auto;
 }
 
-.hero-bio p {
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-.hero-bio p:last-child {
-  margin-bottom: 0;
-}
-
-/* Extra desktop spacing between name and bio */
-.hero-bio {
-  margin-top: 8px;
-}
-
 /* Mobile: photo on the left, text on the right */
 @media (max-width: 768px) {
   .hero-header .hero-main-row {
@@ -195,7 +180,7 @@ span.highlight {
   .hero-header .name {
     text-align: left !important;
     padding-top: 0;
-    margin-bottom: 18px;
+    margin: 0;
   }
 
   .hero-header .hero-links {
