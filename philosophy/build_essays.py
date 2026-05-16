@@ -20,6 +20,49 @@ ESSAYS = [
         ),
     },
     {
+        "slug": "against-instantaneous-velocity",
+        "title": "Against Instantaneous Velocity",
+        "category": "Metaphysics",
+        "source": "essay7.txt",
+        "math": True,
+        "blurb": (
+            "Velocity is usually treated as a property at an instant. I argue it is really a "
+            "relation over time—and the limit definition does not change that metaphysically."
+        ),
+    },
+    {
+        "slug": "predication-without-existence",
+        "title": "Against the Principle that Predication Requires Existence",
+        "category": "Metaphysics",
+        "source": "essay8.txt",
+        "math": True,
+        "blurb": (
+            "If $Fx$, must $x$ exist? Fictional and modal discourse suggest we can predicate "
+            "properties of things that do not exist in the actual world."
+        ),
+    },
+    {
+        "slug": "special-relativity-against-presentism",
+        "title": "Special Relativity Against Presentism",
+        "category": "Metaphysics",
+        "source": "essay9.txt",
+        "math": True,
+        "blurb": (
+            "Presentism needs an objective present. Special relativity's relativity of simultaneity "
+            "makes that hard to defend."
+        ),
+    },
+    {
+        "slug": "against-principle-alternative-possibilities",
+        "title": "Against the Principle of Alternative Possibilities",
+        "category": "Metaphysics",
+        "source": "essay10.txt",
+        "blurb": (
+            "Frankfurt cases show you can act freely even when you could not have done otherwise—"
+            "what matters is the source of the action."
+        ),
+    },
+    {
         "slug": "everett-measurement-problem",
         "title": "Everett and the Measurement Problem",
         "category": "Philosophy of Quantum Mechanics",
