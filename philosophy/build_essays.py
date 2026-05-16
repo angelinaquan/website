@@ -49,7 +49,34 @@ ESSAYS = [
             "I argue the view is coherent but fails to non-circularly recover three-dimensional space."
         ),
     },
+    {
+        "slug": "sleeping-beauty-self-locating-probability",
+        "title": "Sleeping Beauty and Self-Locating Probability",
+        "category": "Paradox and Infinity",
+        "source": "essay5.txt",
+        "math": True,
+        "blurb": (
+            "When Beauty wakes up, should her credence in Heads be 1/2 or 1/3? I argue the Thirder "
+            "view better fits her self-locating evidence."
+        ),
+    },
+    {
+        "slug": "cantor-theorem-listing-infinity",
+        "title": "Cantor's Theorem and the Failure of Listing Infinity",
+        "category": "Paradox and Infinity",
+        "source": "essay6.txt",
+        "math": True,
+        "blurb": (
+            "Cantor's theorem is not just about larger infinities—it shows why no list can exhaust "
+            "all subsets of a set."
+        ),
+    },
 ]
+
+MATH_PATTERN = re.compile(
+    r"\\\[(?:.|\n)*?\\\]|" r"\$\$(?:.|\n)*?\$\$|" r"\$(?:\\.|[^$])+\$",
+    re.DOTALL,
+)
 
 
 def parse_sections(text: str):
@@ -61,11 +88,28 @@ def parse_sections(text: str):
     return text.strip(), ""
 
 
-def paragraphs_to_html(text: str) -> str:
+def escape_with_math(text: str) -> str:
+    parts = []
+    last = 0
+    for match in MATH_PATTERN.finditer(text):
+        if match.start() > last:
+            parts.append(html.escape(text[last : match.start()]))
+        parts.append(match.group(0))
+        last = match.end()
+    if last < len(text):
+        parts.append(html.escape(text[last:]))
+    return "".join(parts)
+
+
+def paragraphs_to_html(text: str, allow_math: bool = False) -> str:
     blocks = [b.strip() for b in re.split(r"\n\s*\n", text) if b.strip()]
     if len(blocks) == 1 and "\n" in blocks[0]:
         blocks = [ln.strip() for ln in blocks[0].splitlines() if ln.strip()]
-    return "\n".join(f"<p>{html.escape(b)}</p>" for b in blocks)
+    out = []
+    for block in blocks:
+        content = escape_with_math(block) if allow_math else html.escape(block)
+        out.append(f"<p>{content}</p>")
+    return "\n".join(out)
 
 
 def refs_to_html(refs: str) -> str:
@@ -76,9 +120,21 @@ def refs_to_html(refs: str) -> str:
     return f'<p style="margin-top:24px;"><strong>References</strong></p>\n{items}'
 
 
+MATHJAX_HEAD = """<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['\\\\[', '\\\\]']]
+  }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>"""
+
+
 def page_html(meta: dict, body_html: str, refs_html: str, thesis: str | None = None) -> str:
     title = html.escape(meta["title"])
     category = html.escape(meta["category"])
+    mathjax_head = MATHJAX_HEAD if meta.get("math") else ""
     thesis_block = ""
     if thesis:
         thesis_block = f'<p><strong>Thesis:</strong> {html.escape(thesis)}</p>\n<p></p>\n'
@@ -93,6 +149,7 @@ def page_html(meta: dict, body_html: str, refs_html: str, thesis: str | None = N
     <link rel="shortcut icon" href="../../images/angelina-quan.jpeg" type="image/jpeg">
     <link rel="apple-touch-icon" href="../../images/angelina-quan.jpeg">
     <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+    {mathjax_head}
   </head>
   <body>
     <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
@@ -132,7 +189,7 @@ def main():
         # Drop leading author line if present
         raw = re.sub(r"^Angelina Quan\s*\n+", "", raw.strip())
         body, refs = parse_sections(raw)
-        body_html = paragraphs_to_html(body)
+        body_html = paragraphs_to_html(body, allow_math=meta.get("math", False))
         refs_html = refs_to_html(refs)
         thesis = meta.get("thesis")
         out_dir = ROOT / meta["slug"]
