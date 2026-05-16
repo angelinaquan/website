@@ -1,0 +1,59 @@
+The Sleeping Beauty problem is as follows. Beauty is put to sleep on Sunday. A fair coin is tossed. If it lands Heads, she is awakened once on Monday. If it lands Tails, she is awakened twice, once on Monday and once on Tuesday, with her memory erased between awakenings. When Beauty wakes up, she does not know what day it is and does not remember any earlier awakening. What should her credence be that the coin landed Heads?
+
+There are two main answers. The Halfer says Beauty's credence in Heads should remain
+\[
+\frac{1}{2},
+\]
+because the coin was fair and Beauty has learned no new information about how it landed. The Thirder says Beauty's credence should become
+\[
+\frac{1}{3},
+\]
+because among the possible awakenings, only one out of three is a Heads awakening.
+
+I argue that the Thirder view gives the better account of Beauty's evidence. But it does not win simply because of a mechanical counting argument. It wins because Beauty's evidence is self-locating. When she wakes up, she does not learn an ordinary fact like "the coin landed Tails." Instead, she learns something about where she is located within the experiment: she is one of the awakenings. That fact matters. The deeper problem is that the Halfer treats probability as if it only tracks objective world-states, while Sleeping Beauty shows that rational credence can also depend on an observer's location inside a world.
+
+To see the Thirder argument, divide the possibilities into centered outcomes:
+\[
+H_M, \quad T_M, \quad T_T.
+\]
+Here $H_M$ is the Monday awakening after Heads, $T_M$ is the Monday awakening after Tails, and $T_T$ is the Tuesday awakening after Tails. When Beauty wakes up, each of these is compatible with her evidence. She knows she is awake, but she does not know whether she is in $H_M$, $T_M$, or $T_T$.
+
+The Thirder says that Beauty should assign equal credence to these three centered possibilities:
+\[
+P(H_M)=P(T_M)=P(T_T)=\frac{1}{3}.
+\]
+Since Heads occurs only in $H_M$, we get
+\[
+P(H)=P(H_M)=\frac{1}{3}.
+\]
+This is the basic mathematical argument for Thirding.
+
+The Halfer rejects this. The Halfer argues that the coin was fair on Sunday, so
+\[
+P(H)=P(T)=\frac{1}{2}.
+\]
+When Beauty wakes up, she already knew that she would wake up no matter what. If Heads, she wakes up Monday. If Tails, she wakes up Monday and Tuesday. So the fact that she is awake seems to add no information about the coin toss. On this view, Beauty has not learned anything that should change her credence in Heads.
+
+This is a serious objection. It captures something important: the objective chance of Heads really is still $1/2$. The coin has not become biased just because Beauty woke up. If we are asking about the physical chance of the coin landing Heads, the answer remains
+\[
+\frac{1}{2}.
+\]
+The Thirder should not deny this. The question is not whether the coin's chance has changed. The question is what Beauty should believe after receiving her particular evidence.
+
+This distinction matters. Beauty's evidence is not just "I am awake at least once." She already knew that. Her evidence is more specific: "I am awake now, in this particular awakening, without knowing which awakening this is." That is de se evidence. It is evidence about herself as located within the experiment. The Halfer view has trouble with this because it treats Beauty's awakening as if it only gives information she already had on Sunday. But from Beauty's perspective, there are now multiple possible locations she could occupy. The Tails world contains two such locations, while the Heads world contains one.
+
+This is why the repeated experiment case supports the Thirder. Suppose the experiment is run many times. In about half of the trials, the coin lands Heads, producing one Heads awakening. In about half of the trials, the coin lands Tails, producing two Tails awakenings. So across many trials, the awakenings come in the approximate ratio
+\[
+\text{Heads awakenings} : \text{Tails awakenings} = 1 : 2.
+\]
+If Beauty is asked for her credence each time she wakes up, she should expect about one third of her awakenings to be Heads awakenings and about two thirds to be Tails awakenings. So if her credence is meant to guide her as an awakened subject, $1/3$ is the better answer.
+
+A Halfer might reply that this changes the question. The original question asks about the coin toss, not about awakenings. There are only two possible worlds: Heads and Tails. Since the coin is fair, each world has probability $1/2$. Counting awakenings, the Halfer says, illegitimately gives more weight to Tails just because Beauty appears twice in that world.
+
+But this reply assumes the very thing at issue. It assumes that rational credence should only track uncentered worlds. In ordinary cases, that is usually fine. But Sleeping Beauty is not ordinary. Beauty's uncertainty is not just about which world is actual. It is also about which position she occupies inside the actual world. A complete description of her uncertainty must include both the world and her location in it. Once we include centered possibilities, Tails gets more weight because it contains more possible awakenings for Beauty to be.
+
+The deeper problem is that the Halfer view cannot fully explain why Beauty's current perspective should be ignored. If Beauty were told "this is your second awakening," her credence in Heads should immediately become 0, because there is no second awakening in the Heads case. So information about her temporal location clearly can matter to her belief about the coin. The Thirder simply takes this lesson seriously from the start. Even when Beauty is not told whether it is Monday or Tuesday, the fact that she is one awakening among the possible awakenings is still relevant evidence.
+
+This does not mean the Thirder view is perfect. It depends on treating awakenings as the right units of epistemic possibility. That assumption is plausible, but it is not trivial. The Sleeping Beauty problem is hard precisely because it forces us to ask what probabilities are probabilities over: worlds, events, observer-moments, or pieces of evidence. The Thirder answer is powerful because it fits the observer's situation, but it also commits us to a more observer-relative picture of probability.
+
+In conclusion, Beauty should assign credence $1/3$ to Heads upon awakening. The objective chance of the coin landing Heads remains $1/2$, but Beauty's rational credence is not determined only by objective chance. It is also shaped by self-locating evidence. The Halfer view is appealing because it preserves the simple thought that a fair coin stays fair. But it misses the role of Beauty's perspective inside the experiment. The Sleeping Beauty problem shows that probability is not always just about which world is actual. Sometimes it is also about where we are within the world.
