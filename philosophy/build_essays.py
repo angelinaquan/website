@@ -14,14 +14,6 @@ ESSAYS = [
         "title": "Newton's Bucket and Relationalism",
         "category": "Metaphysics",
         "source": "essay1.txt",
-        "thesis": (
-            "Newton uses the spinning bucket to argue that only absolute space can explain why "
-            "the water's surface curves and that this proves relationalism false, but I will argue, "
-            "with help from Dasgupta (2015), that the bucket does not actually rule out relationalism "
-            "because acceleration can be explained through relations between bodies, Newton's "
-            "empty-universe example assumes what it tries to prove, and a simpler relational account "
-            "makes better sense without positing absolute space."
-        ),
         "blurb": (
             "Newton's spinning bucket is supposed to show that absolute space is real. I argue, "
             "with Dasgupta (2015), that relationalism can explain the water's curvature without it."
