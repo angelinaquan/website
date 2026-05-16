@@ -10,13 +10,14 @@ SOURCES = ROOT / "sources"
 
 ESSAYS = [
     {
-        "slug": "newtons-bucket-relationalism",
-        "title": "Newton's Bucket and Relationalism",
+        "slug": "predicating-properties-of-non-existents",
+        "title": "Predicating Properties of Non-Existents",
         "category": "Metaphysics",
-        "source": "essay1.txt",
+        "source": "essay8.txt",
+        "math": True,
         "blurb": (
-            "Newton's spinning bucket is supposed to show that absolute space is real. I argue, "
-            "with Dasgupta (2015), that relationalism can explain the water's curvature without it."
+            "If $Fx$, must $x$ exist? Fictional and modal discourse suggest we can predicate "
+            "properties of things that do not exist in the actual world."
         ),
     },
     {
@@ -28,17 +29,6 @@ ESSAYS = [
         "blurb": (
             "Velocity is usually treated as a property at an instant. I argue it is really a "
             "relation over time—and the limit definition does not change that metaphysically."
-        ),
-    },
-    {
-        "slug": "predicating-properties-of-non-existents",
-        "title": "Predicating Properties of Non-Existents",
-        "category": "Metaphysics",
-        "source": "essay8.txt",
-        "math": True,
-        "blurb": (
-            "If $Fx$, must $x$ exist? Fictional and modal discourse suggest we can predicate "
-            "properties of things that do not exist in the actual world."
         ),
     },
     {
@@ -60,6 +50,16 @@ ESSAYS = [
         "blurb": (
             "Frankfurt cases show you can act freely even when you could not have done otherwise—"
             "what matters is the source of the action."
+        ),
+    },
+    {
+        "slug": "newtons-bucket-relationalism",
+        "title": "Newton's Bucket and Relationalism",
+        "category": "Metaphysics",
+        "source": "essay1.txt",
+        "blurb": (
+            "Newton's spinning bucket is supposed to show that absolute space is real. I argue, "
+            "with Dasgupta (2015), that relationalism can explain the water's curvature without it."
         ),
     },
     {
