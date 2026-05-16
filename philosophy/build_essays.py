@@ -20,8 +20,8 @@ ESSAYS = [
         ),
     },
     {
-        "slug": "against-instantaneous-velocity",
-        "title": "Against Instantaneous Velocity",
+        "slug": "instantaneous-velocity-not-at-an-instant",
+        "title": "Instantaneous Velocity Is Not at an Instant",
         "category": "Metaphysics",
         "source": "essay7.txt",
         "math": True,
@@ -31,8 +31,8 @@ ESSAYS = [
         ),
     },
     {
-        "slug": "predication-without-existence",
-        "title": "Against the Principle that Predication Requires Existence",
+        "slug": "predicating-properties-of-non-existents",
+        "title": "Predicating Properties of Non-Existents",
         "category": "Metaphysics",
         "source": "essay8.txt",
         "math": True,
@@ -42,8 +42,8 @@ ESSAYS = [
         ),
     },
     {
-        "slug": "special-relativity-against-presentism",
-        "title": "Special Relativity Against Presentism",
+        "slug": "presentism-relativity-of-simultaneity",
+        "title": "Presentism and the Relativity of Simultaneity",
         "category": "Metaphysics",
         "source": "essay9.txt",
         "math": True,
@@ -53,8 +53,8 @@ ESSAYS = [
         ),
     },
     {
-        "slug": "against-principle-alternative-possibilities",
-        "title": "Against the Principle of Alternative Possibilities",
+        "slug": "frankfurt-cases-alternative-possibilities",
+        "title": "Frankfurt Cases and Alternative Possibilities",
         "category": "Metaphysics",
         "source": "essay10.txt",
         "blurb": (
