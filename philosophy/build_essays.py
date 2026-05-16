@@ -16,8 +16,8 @@ ESSAYS = [
         "source": "essay8.txt",
         "math": True,
         "blurb": (
-            "If $Fx$, must $x$ exist? Fictional and modal discourse suggest we can predicate "
-            "properties of things that do not exist in the actual world."
+            "If something has a property, does it exist? I argue not always—fictional and modal "
+            "discourse let us ascribe properties without the subject existing in the actual world."
         ),
     },
     {
@@ -38,8 +38,8 @@ ESSAYS = [
         "source": "essay9.txt",
         "math": True,
         "blurb": (
-            "Presentism needs an objective present. Special relativity's relativity of simultaneity "
-            "makes that hard to defend."
+            "Presentism needs an objective present. I argue special relativity's relativity of "
+            "simultaneity makes that hard to defend."
         ),
     },
     {
@@ -48,8 +48,8 @@ ESSAYS = [
         "category": "Metaphysics",
         "source": "essay10.txt",
         "blurb": (
-            "Frankfurt cases show you can act freely even when you could not have done otherwise—"
-            "what matters is the source of the action."
+            "Can you act freely without being able to do otherwise? I argue Frankfurt cases show "
+            "you can—what matters is the source of the action."
         ),
     },
     {
@@ -110,8 +110,8 @@ ESSAYS = [
         "source": "essay6.txt",
         "math": True,
         "blurb": (
-            "Cantor's theorem is not just about larger infinities—it shows why no list can exhaust "
-            "all subsets of a set."
+            "Is Cantor's theorem just about larger infinities? I argue it shows why no list can "
+            "exhaust all subsets of a set."
         ),
     },
 ]
