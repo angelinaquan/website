@@ -126,9 +126,9 @@ ESSAYS = [
             "encourage you to read the book before reading my essay."
         ),
         "blurb": (
-            "Can you be blameworthy for harm you never intended? I argue Anscombe's account of "
-            "intention is powerful, but negligence shows blame often rests on descriptions the "
-            "agent should have grasped."
+            "\"I didn't mean it\" only gets you so far. On Anscombe, intention is about how you "
+            "understand what you're doing—and negligence is when that understanding was way too "
+            "narrow."
         ),
     },
 ]
