@@ -115,17 +115,34 @@ ESSAYS = [
             "preventing."
         ),
     },
+    {
+        "slug": "reflection-anscombe-intention",
+        "title": "Reflection on Anscombe's Intention",
+        "category": "Miscellaneous",
+        "source": "essay11.txt",
+        "term": "May 16, 2026",
+        "preface": (
+            "This is by far the most interesting book I have read this year, and I would strongly "
+            "encourage you to read the book before reading my essay."
+        ),
+        "blurb": (
+            "Can you be blameworthy for harm you never intended? I argue Anscombe's account of "
+            "intention is powerful, but negligence shows blame often rests on descriptions the "
+            "agent should have grasped."
+        ),
+    },
 ]
 
 CATEGORY_TERMS = {
     "Metaphysics": "Fall 2025",
     "Philosophy of Quantum Mechanics": "Spring 2026",
     "Paradox and Infinity": "Spring 2026",
+    "Miscellaneous": "May 16, 2026",
 }
 
 
-def term_for_category(category: str) -> str:
-    return CATEGORY_TERMS.get(category, "")
+def term_for_essay(meta: dict) -> str:
+    return meta.get("term") or CATEGORY_TERMS.get(meta["category"], "")
 
 
 MATH_PATTERN = re.compile(
@@ -189,11 +206,16 @@ window.MathJax = {
 def page_html(meta: dict, body_html: str, refs_html: str, thesis: str | None = None) -> str:
     title = html.escape(meta["title"])
     category = html.escape(meta["category"])
-    term = html.escape(term_for_category(meta["category"]))
+    term = html.escape(term_for_essay(meta))
     author_line = (
         f"<strong>Angelina Quan</strong> · <em>{term}</em>" if term else "<strong>Angelina Quan</strong>"
     )
     mathjax_head = MATHJAX_HEAD if meta.get("math") else ""
+    preface_block = ""
+    if meta.get("preface"):
+        preface_block = (
+            f'<p><em>Preface: {html.escape(meta["preface"])}</em></p>\n<p></p>\n'
+        )
     thesis_block = ""
     if thesis:
         thesis_block = f'<p><strong>Thesis:</strong> {html.escape(thesis)}</p>\n<p></p>\n'
@@ -229,7 +251,7 @@ def page_html(meta: dict, body_html: str, refs_html: str, thesis: str | None = N
                 <br>
                 <em>{category}</em>
                 <p></p>
-                {thesis_block}{body_html}
+                {preface_block}{thesis_block}{body_html}
                 {refs_html}
               </td>
             </tr>
