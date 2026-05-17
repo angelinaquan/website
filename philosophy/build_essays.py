@@ -104,17 +104,29 @@ ESSAYS = [
         ),
     },
     {
-        "slug": "cantor-theorem-listing-infinity",
-        "title": "Cantor's Theorem and the Failure of Listing Infinity",
+        "slug": "omega-sequence-paradoxes",
+        "title": "Omega Sequence Paradoxes and the Failure of Completion",
         "category": "Paradox and Infinity",
         "source": "essay6.txt",
         "math": True,
         "blurb": (
-            "Is Cantor's theorem just about larger infinities? I argue it shows why no list can "
-            "exhaust all subsets of a set."
+            "Can infinitely many harmless steps produce an impossible outcome? I argue omega "
+            "sequence paradoxes show completion breaks down when no single condition does the "
+            "preventing."
         ),
     },
 ]
+
+CATEGORY_TERMS = {
+    "Metaphysics": "Fall 2025",
+    "Philosophy of Quantum Mechanics": "Spring 2026",
+    "Paradox and Infinity": "Spring 2026",
+}
+
+
+def term_for_category(category: str) -> str:
+    return CATEGORY_TERMS.get(category, "")
+
 
 MATH_PATTERN = re.compile(
     r"\\\[(?:.|\n)*?\\\]|" r"\$\$(?:.|\n)*?\$\$|" r"\$(?:\\.|[^$])+\$",
@@ -177,6 +189,10 @@ window.MathJax = {
 def page_html(meta: dict, body_html: str, refs_html: str, thesis: str | None = None) -> str:
     title = html.escape(meta["title"])
     category = html.escape(meta["category"])
+    term = html.escape(term_for_category(meta["category"]))
+    author_line = (
+        f"<strong>Angelina Quan</strong> · <em>{term}</em>" if term else "<strong>Angelina Quan</strong>"
+    )
     mathjax_head = MATHJAX_HEAD if meta.get("math") else ""
     thesis_block = ""
     if thesis:
@@ -209,7 +225,7 @@ def page_html(meta: dict, body_html: str, refs_html: str, thesis: str | None = N
             </tr>
             <tr>
               <td style="padding:8px 16px 16px 16px;width:100%;vertical-align:middle">
-                <strong>Angelina Quan</strong>
+                {author_line}
                 <br>
                 <em>{category}</em>
                 <p></p>
