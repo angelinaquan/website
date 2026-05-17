@@ -21,8 +21,8 @@ ESSAYS = [
         ),
     },
     {
-        "slug": "instantaneous-velocity-not-at-an-instant",
-        "title": "Instantaneous Velocity Is Not at an Instant",
+        "slug": "is-instantaneous-velocity-an-instant",
+        "title": "Is Instantaneous Velocity an Instant?",
         "category": "Metaphysics",
         "source": "essay7.txt",
         "math": True,
