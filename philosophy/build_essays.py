@@ -116,9 +116,20 @@ ESSAYS = [
         ),
     },
     {
+        "slug": "comfort-unfreedom-beauvoir",
+        "title": "The Comfort of Unfreedom: Beauvoir on Agency Under Oppression",
+        "category": "Feminist Thought",
+        "source": "essay12.txt",
+        "blurb": (
+            "Why is it so hard to leave roles that limit you? On Beauvoir, oppression doesn't "
+            "just block you from the outside—it can make unfreedom feel like safety, love, and "
+            "belonging."
+        ),
+    },
+    {
         "slug": "reflection-anscombe-intention",
         "title": "Reflection on Anscombe's Intention",
-        "category": "Miscellaneous",
+        "category": "Ethics",
         "source": "essay11.txt",
         "term": "May 16, 2026",
         "preface": (
@@ -137,7 +148,8 @@ CATEGORY_TERMS = {
     "Metaphysics": "Fall 2025",
     "Philosophy of Quantum Mechanics": "Spring 2026",
     "Paradox and Infinity": "Spring 2026",
-    "Miscellaneous": "May 16, 2026",
+    "Ethics": "May 16, 2026",
+    "Feminist Thought": "Spring 2026",
 }
 
 
