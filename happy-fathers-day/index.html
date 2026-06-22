@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爸爸的好运签</title>
+    <meta name="description" content="爸爸，父亲节快乐。">
+    <link rel="icon" href="../images/angelina-quan.jpeg" type="image/jpeg">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="page-shell" aria-label="爸爸的好运签">
+      <img class="scene-art" src="assets/fortune-table.svg" alt="" aria-hidden="true">
+      <div class="ambient ambient-one"></div>
+      <div class="ambient ambient-two"></div>
+
+      <section class="intro" id="intro">
+        <p class="overline">爸爸的好运签</p>
+        <h1>爸爸，父亲节快乐。</h1>
+        <button class="primary-button" id="openFortune" type="button">
+          领取今日专属好运
+        </button>
+      </section>
+
+      <section class="fortune-stage" id="fortuneStage" aria-live="polite">
+        <div class="draw-area">
+          <div class="bamboo-cup" aria-hidden="true">
+            <div class="stick stick-one"></div>
+            <div class="stick stick-two"></div>
+            <div class="stick stick-three"></div>
+            <div class="cup-body">福</div>
+          </div>
+          <div class="fortune-slip" id="fortuneSlip">
+            <span id="fortuneText">愿爸爸身体硬朗，万事胜意。</span>
+          </div>
+        </div>
+
+        <article class="blessing-card personal-blessing">
+          <div class="card-mark" aria-hidden="true">福</div>
+          <p class="card-kicker">我的祝福</p>
+          <p>
+            爸爸父亲节快乐！希望下一个父亲节咱们能在一个城市一起过！我近两年来都没能好好和你和妈妈待在一起聊天，但是我能感受到你们一直都很爱我！我对你们的爱也是一样的！我对你的祝福有很多很多很多，多到说不完，希望你身体安康，万事平安，工作顺利，每天开心！你从小让我感受到的这些爱和快乐我希望你也都能感受到！愿咱们来年能有更多时光一起聊天！
+          </p>
+        </article>
+
+        <button class="secondary-button" id="redrawFortune" type="button">
+          再抽一签
+        </button>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
