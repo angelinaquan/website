@@ -1,0 +1,440 @@
+:root {
+  --ink: #3d1710;
+  --muted: #795145;
+  --red: #a8231d;
+  --deep-red: #6f1512;
+  --gold: #d7a43d;
+  --paper: #fff7df;
+  --paper-strong: #ffe9ad;
+  --jade: #60734c;
+  --shadow: 0 22px 60px rgba(78, 19, 12, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: #8d221a;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: "Songti SC", "Noto Serif SC", "STSong", "SimSun", Georgia, serif;
+  overflow-x: hidden;
+}
+
+button {
+  font: inherit;
+}
+
+.page-shell {
+  position: relative;
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 44px 18px;
+  isolation: isolate;
+}
+
+.scene-art {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page-shell::before {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  content: "";
+  background:
+    linear-gradient(180deg, rgba(255, 247, 223, 0.74), rgba(255, 228, 170, 0.5) 47%, rgba(105, 18, 13, 0.56)),
+    radial-gradient(circle at 50% 32%, rgba(255, 252, 231, 0.76), rgba(255, 244, 204, 0.22) 38%, rgba(105, 18, 13, 0.18) 74%);
+}
+
+.page-shell::after {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background-image:
+    linear-gradient(rgba(255, 248, 222, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 248, 222, 0.14) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.24), transparent 72%);
+}
+
+.ambient {
+  position: fixed;
+  z-index: -1;
+  width: 170px;
+  height: 170px;
+  border: 1px solid rgba(255, 229, 162, 0.42);
+  transform: rotate(45deg);
+  animation: float 9s ease-in-out infinite;
+}
+
+.ambient-one {
+  top: 9vh;
+  left: 8vw;
+}
+
+.ambient-two {
+  right: 8vw;
+  bottom: 12vh;
+  width: 130px;
+  height: 130px;
+  animation-delay: -3s;
+}
+
+.intro,
+.fortune-stage {
+  width: min(940px, 100%);
+}
+
+.intro {
+  display: grid;
+  justify-items: center;
+  gap: 28px;
+  text-align: center;
+  animation: riseIn 700ms ease both;
+}
+
+.overline {
+  margin: 0;
+  color: var(--deep-red);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+h1 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(42px, 8vw, 86px);
+  font-weight: 700;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.primary-button,
+.secondary-button {
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.primary-button {
+  padding: 15px 28px;
+  color: #fff9e6;
+  background: linear-gradient(135deg, var(--red), var(--deep-red));
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.primary-button:hover,
+.primary-button:focus-visible,
+.secondary-button:hover,
+.secondary-button:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 28px 70px rgba(78, 19, 12, 0.26);
+  outline: none;
+}
+
+.primary-button:active,
+.secondary-button:active {
+  transform: translateY(0);
+}
+
+.fortune-stage {
+  display: none;
+  justify-items: center;
+  gap: 26px;
+}
+
+.fortune-stage.is-visible {
+  display: grid;
+  animation: openStage 900ms cubic-bezier(.2, .78, .2, 1) both;
+}
+
+.draw-area {
+  display: grid;
+  width: min(480px, 100%);
+  justify-items: center;
+  gap: 0;
+  padding-top: 10px;
+}
+
+.bamboo-cup {
+  position: relative;
+  width: 180px;
+  height: 168px;
+}
+
+.cup-body {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 0;
+  display: grid;
+  height: 100px;
+  place-items: center;
+  border: 2px solid rgba(255, 227, 160, 0.72);
+  border-radius: 22px 22px 46px 46px;
+  color: rgba(255, 247, 223, 0.92);
+  background: linear-gradient(180deg, #b92c23, #711511);
+  box-shadow: var(--shadow);
+  font-size: 45px;
+  font-weight: 700;
+}
+
+.cup-body::before {
+  position: absolute;
+  top: -12px;
+  left: 12px;
+  right: 12px;
+  height: 24px;
+  border-radius: 50%;
+  content: "";
+  background: #8f2019;
+  box-shadow: inset 0 6px 12px rgba(46, 10, 7, 0.34);
+}
+
+.stick {
+  position: absolute;
+  bottom: 78px;
+  left: 84px;
+  width: 16px;
+  height: 108px;
+  border-radius: 9px;
+  background: linear-gradient(90deg, #f7d682, #b97622);
+  transform-origin: bottom center;
+  box-shadow: 0 7px 20px rgba(77, 15, 9, 0.18);
+}
+
+.stick-one {
+  transform: rotate(-13deg);
+}
+
+.stick-two {
+  height: 128px;
+  transform: rotate(0deg);
+}
+
+.stick-three {
+  transform: rotate(14deg);
+}
+
+.fortune-stage.is-visible .stick-two {
+  animation: drawStick 1s 280ms cubic-bezier(.16, .9, .28, 1.2) both;
+}
+
+.fortune-slip {
+  display: grid;
+  width: min(100%, 430px);
+  min-height: 88px;
+  place-items: center;
+  margin-top: -8px;
+  padding: 18px 30px;
+  border: 1px solid rgba(139, 70, 26, 0.24);
+  border-radius: 8px;
+  color: #6a1e15;
+  background:
+    linear-gradient(90deg, rgba(165, 35, 28, 0.12), transparent 15%, transparent 85%, rgba(165, 35, 28, 0.12)),
+    linear-gradient(135deg, #fff8e1, #ffe5a0);
+  box-shadow: var(--shadow);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.fortune-slip.is-changing {
+  animation: slipChange 430ms ease both;
+}
+
+.blessing-card {
+  position: relative;
+  width: min(760px, 100%);
+  min-height: 246px;
+  overflow: hidden;
+  padding: 28px 24px 26px;
+  border: 1px solid rgba(139, 70, 26, 0.22);
+  border-radius: 8px;
+  background: rgba(255, 249, 231, 0.88);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.blessing-card::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.34), transparent 44%);
+  pointer-events: none;
+}
+
+.card-mark {
+  position: absolute;
+  right: 18px;
+  bottom: -18px;
+  color: rgba(168, 35, 29, 0.09);
+  font-size: 126px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.card-kicker {
+  margin: 0 0 14px;
+  color: var(--deep-red);
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.blessing-card p:last-child {
+  position: relative;
+  margin: 0;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+.personal-blessing {
+  border-top: 5px solid var(--red);
+}
+
+.secondary-button {
+  padding: 13px 24px;
+  color: var(--deep-red);
+  background: rgba(255, 248, 222, 0.88);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes openStage {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes drawStick {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  48% {
+    transform: translateY(-76px) rotate(2deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes slipChange {
+  0% {
+    opacity: .55;
+    transform: translateY(0) rotate(0deg);
+  }
+  45% {
+    opacity: 0;
+    transform: translateY(8px) rotate(-1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(45deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(45deg);
+  }
+}
+
+@media (max-width: 820px) {
+  .page-shell {
+    padding: 28px 14px;
+  }
+
+  .blessing-card {
+    min-height: auto;
+    padding: 23px 20px 22px;
+  }
+
+  .blessing-card p:last-child {
+    font-size: 17px;
+    line-height: 1.78;
+  }
+
+  .card-kicker {
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 520px) {
+  .page-shell {
+    min-height: 100svh;
+  }
+
+  .ambient {
+    display: none;
+  }
+
+  .overline {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: min(100%, 310px);
+  }
+
+  .fortune-slip {
+    min-height: 104px;
+    padding: 18px 22px;
+    font-size: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+}
