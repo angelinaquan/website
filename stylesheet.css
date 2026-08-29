@@ -167,7 +167,8 @@ span.highlight {
 }
 
 .profile-photo-wrap:hover .fun-sparkle,
-.profile-photo-wrap:focus-within .fun-sparkle {
+.profile-photo-wrap:focus-within .fun-sparkle,
+.profile-photo-wrap.sparkle-visible .fun-sparkle {
   opacity: 0.65;
   transform: scale(1);
 }
