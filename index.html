@@ -37,12 +37,11 @@
                   <a href="mailto:aquan@mit.edu">Email</a> &nbsp;/&nbsp;
                   <a href="https://x.com/angelina_quan">Twitter</a> &nbsp;/&nbsp;
                   <a href="https://github.com/angelinaquan">Github</a> &nbsp;/&nbsp;
-                  <a href="https://www.linkedin.com/in/angelina-quan-163689208/">LinkedIn</a> &nbsp;/&nbsp;
-                  <a href="fun/">Fun</a>
+                  <a href="https://www.linkedin.com/in/angelina-quan-163689208/">LinkedIn</a>
                 </p>
               </td>
               <td class="hero-photo-cell" style="padding:2.5%;width:30%;max-width:30%;vertical-align:middle">
-                <a href="images/angelina-quan.jpeg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/angelina-quan.jpeg" class="hoverZoomLink"></a>
+                <a href="images/angelina-quan.jpeg"><img id="profile-photo" style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/angelina-quan.jpeg" class="hoverZoomLink"></a>
               </td>
             </tr>
           </tbody></table>
@@ -116,5 +115,49 @@
         </td>
       </tr>
     </table>
+    <script>
+      (function () {
+        var photo = document.getElementById('profile-photo');
+        if (!photo) return;
+
+        var hoveringPhoto = false;
+        var tapCount = 0;
+        var tapTimer = null;
+
+        function openFun() {
+          window.location.href = 'fun/';
+        }
+
+        photo.addEventListener('mouseenter', function () {
+          hoveringPhoto = true;
+        });
+
+        photo.addEventListener('mouseleave', function () {
+          hoveringPhoto = false;
+        });
+
+        document.addEventListener('keydown', function (event) {
+          if (hoveringPhoto && event.key === 'Shift') {
+            openFun();
+          }
+        });
+
+        photo.addEventListener('touchend', function (event) {
+          event.preventDefault();
+          event.stopPropagation();
+          tapCount += 1;
+          window.clearTimeout(tapTimer);
+
+          if (tapCount >= 3) {
+            openFun();
+            return;
+          }
+
+          tapTimer = window.setTimeout(function () {
+            tapCount = 0;
+          }, 900);
+        });
+      }());
+    </script>
   </body>
 </html>
