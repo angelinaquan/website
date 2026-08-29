@@ -41,7 +41,10 @@
                 </p>
               </td>
               <td class="hero-photo-cell" style="padding:2.5%;width:30%;max-width:30%;vertical-align:middle">
-                <a href="images/angelina-quan.jpeg"><img id="profile-photo" style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/angelina-quan.jpeg" class="hoverZoomLink"></a>
+                <span id="profile-photo-wrap" class="profile-photo-wrap">
+                  <a href="images/angelina-quan.jpeg"><img id="profile-photo" style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/angelina-quan.jpeg" class="hoverZoomLink"></a>
+                  <a class="fun-sparkle" href="fun/" aria-label="Fun">&#10022;</a>
+                </span>
               </td>
             </tr>
           </tbody></table>
@@ -117,8 +120,8 @@
     </table>
     <script>
       (function () {
-        var photo = document.getElementById('profile-photo');
-        if (!photo) return;
+        var photoWrap = document.getElementById('profile-photo-wrap');
+        if (!photoWrap) return;
 
         var hoveringPhoto = false;
         var tapCount = 0;
@@ -128,11 +131,11 @@
           window.location.href = 'fun/';
         }
 
-        photo.addEventListener('mouseenter', function () {
+        photoWrap.addEventListener('mouseenter', function () {
           hoveringPhoto = true;
         });
 
-        photo.addEventListener('mouseleave', function () {
+        photoWrap.addEventListener('mouseleave', function () {
           hoveringPhoto = false;
         });
 
@@ -142,7 +145,11 @@
           }
         });
 
-        photo.addEventListener('touchend', function (event) {
+        photoWrap.addEventListener('touchend', function (event) {
+          if (event.target.closest('.fun-sparkle')) {
+            return;
+          }
+
           event.preventDefault();
           event.stopPropagation();
           tapCount += 1;
