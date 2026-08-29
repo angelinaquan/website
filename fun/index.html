@@ -11,6 +11,42 @@
     <link rel="shortcut icon" href="../images/angelina-quan.jpeg" type="image/jpeg">
     <link rel="apple-touch-icon" href="../images/angelina-quan.jpeg">
     <link rel="stylesheet" type="text/css" href="../stylesheet.css">
+    <style>
+      .book-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 18px 16px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .book-item {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+      }
+
+      .book-cover {
+        width: 48px;
+        height: 72px;
+        flex: 0 0 48px;
+        object-fit: cover;
+        border: 1px solid #ddd;
+      }
+
+      .book-title {
+        display: block;
+        line-height: 1.25;
+      }
+
+      .book-author {
+        display: block;
+        margin-top: 3px;
+        color: #555;
+        line-height: 1.25;
+      }
+    </style>
   </head>
 
   <body>
@@ -41,16 +77,43 @@
             </tr>
             <tr>
               <td style="padding:0px 16px 16px 16px;width:100%;vertical-align:middle">
-                <ul>
-                  <li><em>The Stranger</em> - Albert Camus</li>
-                  <li><em>Outliers</em> - Malcolm Gladwell</li>
-                  <li><em>Les Miserables</em> - Victor Hugo</li>
-                  <li><em>Soul Mountain</em> - Gao Xingjian</li>
-                  <li><em>The Three-Body Problem</em> - Liu Cixin</li>
-                  <li><em>The People in the Trees</em> - Hanya Yanagihara</li>
-                  <li><em>Life and Death Are Wearing Me Out</em> - Mo Yan</li>
-                  <li><em>Daisy Miller</em> - Henry James</li>
-                  <li><em>Girl with a Pearl Earring</em> - Tracy Chevalier</li>
+                <ul class="book-grid">
+                  <li class="book-item">
+                    <img class="book-cover" src="https://covers.openlibrary.org/b/isbn/0679720200-M.jpg" alt="The Stranger book cover">
+                    <span><em class="book-title">The Stranger</em><span class="book-author">Albert Camus</span></span>
+                  </li>
+                  <li class="book-item">
+                    <img class="book-cover" src="https://covers.openlibrary.org/b/isbn/0316017930-M.jpg" alt="Outliers book cover">
+                    <span><em class="book-title">Outliers</em><span class="book-author">Malcolm Gladwell</span></span>
+                  </li>
+                  <li class="book-item">
+                    <img class="book-cover" src="https://covers.openlibrary.org/b/isbn/0140444300-M.jpg" alt="Les Miserables book cover">
+                    <span><em class="book-title">Les Miserables</em><span class="book-author">Victor Hugo</span></span>
+                  </li>
+                  <li class="book-item">
+                    <img class="book-cover" src="https://covers.openlibrary.org/b/id/52610-M.jpg" alt="Soul Mountain book cover">
+                    <span><em class="book-title">Soul Mountain</em><span class="book-author">Gao Xingjian</span></span>
+                  </li>
+                  <li class="book-item">
+                    <img class="book-cover" src="https://covers.openlibrary.org/b/isbn/0765382032-M.jpg" alt="The Three-Body Problem book cover">
+                    <span><em class="book-title">The Three-Body Problem</em><span class="book-author">Liu Cixin</span></span>
+                  </li>
+                  <li class="book-item">
+                    <img class="book-cover" src="https://covers.openlibrary.org/b/isbn/0385536771-M.jpg" alt="The People in the Trees book cover">
+                    <span><em class="book-title">The People in the Trees</em><span class="book-author">Hanya Yanagihara</span></span>
+                  </li>
+                  <li class="book-item">
+                    <img class="book-cover" src="https://covers.openlibrary.org/b/id/11226731-M.jpg" alt="Life and Death Are Wearing Me Out book cover">
+                    <span><em class="book-title">Life and Death Are Wearing Me Out</em><span class="book-author">Mo Yan</span></span>
+                  </li>
+                  <li class="book-item">
+                    <img class="book-cover" src="https://covers.openlibrary.org/b/isbn/0141441348-M.jpg" alt="Daisy Miller book cover">
+                    <span><em class="book-title">Daisy Miller</em><span class="book-author">Henry James</span></span>
+                  </li>
+                  <li class="book-item">
+                    <img class="book-cover" src="https://covers.openlibrary.org/b/isbn/0452282152-M.jpg" alt="Girl with a Pearl Earring book cover">
+                    <span><em class="book-title">Girl with a Pearl Earring</em><span class="book-author">Tracy Chevalier</span></span>
+                  </li>
                 </ul>
               </td>
             </tr>
