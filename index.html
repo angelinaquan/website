@@ -126,6 +126,7 @@
         var hoveringPhoto = false;
         var tapCount = 0;
         var tapTimer = null;
+        var hideSparkleTimer = null;
 
         function openFun() {
           window.location.href = 'fun/';
@@ -152,6 +153,9 @@
 
           event.preventDefault();
           event.stopPropagation();
+          photoWrap.classList.add('sparkle-visible');
+          window.clearTimeout(hideSparkleTimer);
+
           tapCount += 1;
           window.clearTimeout(tapTimer);
 
@@ -163,6 +167,10 @@
           tapTimer = window.setTimeout(function () {
             tapCount = 0;
           }, 900);
+
+          hideSparkleTimer = window.setTimeout(function () {
+            photoWrap.classList.remove('sparkle-visible');
+          }, 2500);
         });
       }());
     </script>
