@@ -10,6 +10,18 @@ SOURCES = ROOT / "sources"
 
 ESSAYS = [
     {
+        "slug": "why-boltzmann-brains-are-good",
+        "title": "Why Boltzmann Brains Are Good",
+        "category": "BOLTMANN COSMOLOGY",
+        "source": "essay13.txt",
+        "term": "Fall 2026",
+        "math": True,
+        "blurb": (
+            "Does cognitive instability justify rejecting a cosmology? I argue that Boltzmann "
+            "brains may reveal something about our epistemic position rather than a defect in the theory."
+        ),
+    },
+    {
         "slug": "predicating-properties-of-non-existents",
         "title": "Predicating Properties of Non-Existents",
         "category": "Metaphysics",
