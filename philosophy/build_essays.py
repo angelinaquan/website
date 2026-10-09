@@ -10,18 +10,6 @@ SOURCES = ROOT / "sources"
 
 ESSAYS = [
     {
-        "slug": "why-boltzmann-brains-are-good",
-        "title": "Why Boltzmann Brains Are Good",
-        "category": "BOLTMANN COSMOLOGY",
-        "source": "essay13.txt",
-        "term": "Fall 2026",
-        "math": True,
-        "blurb": (
-            "Does cognitive instability justify rejecting a cosmology? I argue that Boltzmann "
-            "brains may reveal something about our epistemic position rather than a defect in the theory."
-        ),
-    },
-    {
         "slug": "predicating-properties-of-non-existents",
         "title": "Predicating Properties of Non-Existents",
         "category": "Metaphysics",
@@ -152,6 +140,18 @@ ESSAYS = [
             "\"I didn't mean it\" only gets you so far. On Anscombe, intention is about how you "
             "understand what you're doing—and negligence is when that understanding was way too "
             "narrow."
+        ),
+    },
+    {
+        "slug": "why-boltzmann-brains-are-good",
+        "title": "Why Boltzmann Brains Are Good",
+        "category": "Boltzmann Cosmology",
+        "source": "essay13.txt",
+        "term": "Fall 2026",
+        "math": True,
+        "blurb": (
+            "Does cognitive instability justify rejecting a cosmology? I argue that Boltzmann "
+            "brains may reveal something about our epistemic position rather than a defect in the theory."
         ),
     },
 ]
