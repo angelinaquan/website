@@ -143,15 +143,15 @@ ESSAYS = [
         ),
     },
     {
-        "slug": "why-boltzmann-brains-are-good",
-        "title": "Why Boltzmann Brains Are Good",
+        "slug": "false-testimony-and-the-limits-of-self-doubt",
+        "title": "False Testimony and the Limits of Self Doubt",
         "category": "Boltzmann Cosmology",
         "source": "essay13.txt",
         "term": "Fall 2026",
-        "math": True,
+        "course": "24.260",
         "blurb": (
-            "Does cognitive instability justify rejecting a cosmology? I argue that Boltzmann "
-            "brains may reveal something about our epistemic position rather than a defect in the theory."
+            "Does false testimony about cosmology undermine self-trust? I argue that distrusting "
+            "misleading sources need not make our perception, memory, and judgment generally unreliable."
         ),
     },
 ]
@@ -212,7 +212,15 @@ def refs_to_html(refs: str) -> str:
     if not refs:
         return ""
     lines = [ln.strip() for ln in refs.splitlines() if ln.strip()]
-    items = "\n".join(f"<p style=\"margin:0 0 8px 0;\">{html.escape(ln)}</p>" for ln in lines)
+    items = []
+    for line in lines:
+        link = re.fullmatch(r"\[([^\]]+)\]\((https?://[^\s]+)\)", line)
+        content = (
+            f'<a href="{html.escape(link[2], quote=True)}">{html.escape(link[1])}</a>'
+            if link else html.escape(line)
+        )
+        items.append(f'<p style="margin:0 0 8px 0;">{content}</p>')
+    items = "\n".join(items)
     return f'<p style="margin-top:24px;"><strong>References</strong></p>\n{items}'
 
 
@@ -234,6 +242,8 @@ def page_html(meta: dict, body_html: str, refs_html: str, thesis: str | None = N
     author_line = (
         f"<strong>Angelina Quan</strong> · <em>{term}</em>" if term else "<strong>Angelina Quan</strong>"
     )
+    if meta.get("course"):
+        author_line += f' · {html.escape(meta["course"])}'
     mathjax_head = MATHJAX_HEAD if meta.get("math") else ""
     preface_block = ""
     if meta.get("preface"):
@@ -254,7 +264,7 @@ def page_html(meta: dict, body_html: str, refs_html: str, thesis: str | None = N
     <link rel="shortcut icon" href="../../images/angelina-quan.jpeg" type="image/jpeg">
     <link rel="apple-touch-icon" href="../../images/angelina-quan.jpeg">
     <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
-    {mathjax_head}
+{mathjax_head}
   </head>
   <body>
     <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
