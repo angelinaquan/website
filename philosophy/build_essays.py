@@ -161,7 +161,7 @@ ESSAYS = [
         "source": "essay14.txt",
         "term": "Fall 2026",
         "blurb": (
-            "Should Richard kill Angie because she is Hitler’s ancestor? I argue that causal "
+            "Should Richard kill Angie because she is Hitler’s many-times-great-grandmother? I argue that causal "
             "dependence does not establish moral harm, and speculative benefits cannot justify "
             "an established harm without supporting evidence."
         ),
