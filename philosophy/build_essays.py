@@ -154,6 +154,18 @@ ESSAYS = [
             "misleading sources need not make our perception, memory, and judgment generally unreliable."
         ),
     },
+    {
+        "slug": "measuring-the-difference-we-make",
+        "title": "Measuring the Difference We Make",
+        "category": "Consequentialism",
+        "source": "essay14.txt",
+        "term": "Fall 2026",
+        "blurb": (
+            "Should Richard kill Angie because she is Hitler’s ancestor? I argue that causal "
+            "dependence does not establish moral harm, and speculative benefits cannot justify "
+            "an established harm without supporting evidence."
+        ),
+    },
 ]
 
 CATEGORY_TERMS = {
